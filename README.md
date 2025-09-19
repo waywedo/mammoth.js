@@ -377,9 +377,9 @@ Converts the source document to HTML.
      set `options.includeDefaultStyleMap` to `false`.
 
   * `externalFileAccess`: Source documents may reference files outside of the source document.
-    To disable access to any such external files during the conversion process,
-    set `options.externalFileAccess` to `false`.
-    This is highly recommended when converting untrusted user input.
+    Access to any such external files is disabled by default.
+    To enable access when converting trusted source documents,
+    set `options.externalFileAccess` to `true`.
 
   * `convertImage`: by default, images are converted to `<img>` elements with the source included inline in the `src` attribute.
     Set this option to an [image converter](#image-converters) to override the default behaviour.
@@ -541,8 +541,9 @@ For instance:
   and embed the HTML into your website,
   this may allow arbitrary files on the server to be read and exfiltrated.
 
-  To disable access to any such external files during the conversion process,
-  set `options.externalFileAccess` to `false`.
+  To avoid this issue, access to any such external files is disabled by default.
+  To enable access when converting trusted source documents,
+  set `options.externalFileAccess` to `true`.
 
 ### Document transforms
 
